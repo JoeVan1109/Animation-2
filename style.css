@@ -1,0 +1,62 @@
+:root {
+  --main-color: #ca2e55;
+  --point-color: #555;
+  --size: 5px;
+}
+#play-stop{
+  position: absolute;
+  z-index: 5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border: none;
+  width: 200px;
+  height: 50px;
+}
+#play-stop:hover{
+  background-color: #ca2e55;
+  transition: background-color 1s;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+}
+
+.attente {
+
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.element {
+  border-radius: 100%;
+  border: var(--size) solid var(--point-color);
+  margin: 0 calc(var(--size) * 2);
+}
+
+.element.animate {
+  animation: preloader .6s ease-in-out alternate infinite;
+}
+.element:nth-child(1) {
+  animation: preloader .6s ease-in-out alternate infinite;
+}
+
+.element:nth-child(2) {
+  animation: preloader .6s ease-in-out alternate .2s infinite;
+}
+
+.element:nth-child(3) {
+  animation: preloader .6s ease-in-out alternate .4s infinite;
+}
+
+@keyframes preloader {
+  100% {
+    transform: scale(2);
+  }
+}
